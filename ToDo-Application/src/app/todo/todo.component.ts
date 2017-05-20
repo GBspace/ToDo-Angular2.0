@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { Item } from './Model/Item';
 
 
 @Component({
@@ -8,7 +9,11 @@ import { Component} from '@angular/core';
 })
 export class TodoComponent {
     name : string;
+    Urgency: string;
+   
+//    listItems : Array<Item> = [];
     listItems = [];
+
     constructor(){
         this.name = "";
         this.listItems = [];
@@ -16,10 +21,11 @@ export class TodoComponent {
    
 
     
-   addItem(itemName : string){
+   addItem(itemName : string, priority : string){
        console.log(itemName);
        this.listItems.push(itemName);
-    this.name = "";
+       console.log(priority);
+       this.name = "";
    } 
   
     

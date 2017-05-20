@@ -1,21 +1,20 @@
 <div>
     <div id="myDIV" class="header">
       <h2>My To Do List</h2>
-<!--        <input type="text" id="myInput" #newItem placeholder="Title..."></input>-->
+
         <input [(ngModel)] = 'name' type="text" #newItem id="myInput" placeholder="Title...">
-   
-      <button class="addBtn" (click) = "addItem(newItem.value)" >Add</button>
+        
+        <select class="Dropdown" [(ngModel)]="Urgency" #priority>
+			<option value="Urgent" style="color:red">Urgent</option>
+			<option value="Mediocre" style="color:Blue">Mediocre</option>
+			<option value="Can be delayed" style="color:Green">Can be delayed</option>
+		</select>
+       
+      <button class="addBtn" (click) = "addItem(newItem.value,priority.value)" >Add</button>
+        
     </div>
 
-<!--    <ul id="myUL">-->
+
       <ul id="myUL"><li *ngFor="let item of listItems">{{item}}</li></ul>
-<!--
-      <li>Hit the gym</li>
-      <li class="checked">Pay bills</li>
-      <li>Meet George</li>
-      <li>Buy eggs</li>
-      <li>Read a book</li>
-      <li>Organize office</li>
-    </ul>
--->
+
 </div>
